@@ -1,26 +1,41 @@
-import {View, Text, Button} from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import React from 'react';
 import navigations from '../utils/navigation';
-import {useNavigation} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Login from './Login';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MI from 'react-native-vector-icons/MaterialIcons'
+import Reports from './Reports';
+import colors from '../utils/colors';
+import Dashboard from './Dashboard';
+import Header from '../components/Header';
+
+
 
 const Home = () => {
-  const navigation = useNavigation();
-  const goToLogin = () => {
-    navigation.navigate(navigations.LOGIN);
-  };
-
   const Tab = createBottomTabNavigator();
-
   return (
-    <View>
-      <Button onPress={goToLogin} title="Go to  login" />
-      <Tab.Navigator>
-        <Tab.Screen name="Hom" component={Login} />
-        <Tab.Screen name="Setti" component={Login} />
-      </Tab.Navigator>
-    </View>
+    <Tab.Navigator  screenOptions={{
+      tabBarActiveTintColor: colors.PRIMARY,
+      header:Header
+    }} >
+      <Tab.Screen options={{
+        tabBarShowLabel: false,
+        tabBarIcon: ({ color, size }) => (
+          <MI name="dashboard" color={color} size={size} />
+        )
+      }} name={navigations.DASHBOARD} component={Dashboard} />
+      <Tab.Screen options={{
+        tabBarShowLabel: false,
+        tabBarIcon: ({ color, size }) => (
+          <MI name="list-alt" color={color} size={size} />
+        )
+      }} name={navigations.REPORT} component={Reports} />
+      <Tab.Screen options={{
+        tabBarShowLabel: false,
+        tabBarIcon: ({ color, size }) => (
+          <MI name="account-box" color={color} size={size} />
+        )
+      }} name={navigations.PROFILE} component={Reports} />
+    </Tab.Navigator>
   );
 };
 

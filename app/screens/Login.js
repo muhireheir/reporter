@@ -11,7 +11,7 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import navigations from '../utils/navigation';
 import LinearGradient from 'react-native-linear-gradient';
-import MCI from 'react-native-vector-icons/MaterialCommunityIcons';
+import MI from 'react-native-vector-icons/MaterialIcons';
 import colors from '../utils/colors';
 
 const Login = () => {
@@ -23,22 +23,22 @@ const Login = () => {
   return (
     <SafeAreaView style={styles.main}>
       <LinearGradient
-        colors={['#419ff1', '#1287ed']}
+        colors={[colors.WHITE, colors.WHITE]}
         style={styles.linearGradient}>
-        <Text style={styles.title}>SIGN IN</Text>
+        <Text style={styles.title}>Welcome back!</Text>
         <View style={styles.loginWrapper}>
           <View style={styles.inputControl}>
             <Text style={styles.text}>Email</Text>
             <View style={styles.control}>
-              <MCI
-                name="email"
+              <MI
+                name="alternate-email"
                 size={23}
-                color="#fff"
+                color={colors.PRIMARY}
                 style={styles.emailIcon}
               />
               <TextInput
                 // onChangeText={val => updateState({name: 'email', value: val})}
-                placeholderTextColor="#fff"
+                placeholderTextColor={colors.PRIMARY}
                 placeholder="Email"
                 style={styles.input}
               />
@@ -48,10 +48,10 @@ const Login = () => {
           <View style={styles.inputControl}>
             <Text style={styles.text}>Password</Text>
             <View style={styles.control}>
-              <MCI
-                name="shield-key"
+              <MI
+                name="lock-open"
                 size={23}
-                color="#fff"
+                color={colors.PRIMARY}
                 style={styles.emailIcon}
               />
               <TextInput
@@ -59,7 +59,7 @@ const Login = () => {
                 // onChangeText={val =>
                 //   updateState({name: 'password', value: val})
                 // }
-                placeholderTextColor="#fff"
+                placeholderTextColor={colors.PRIMARY}
                 placeholder="Password"
                 style={styles.input}
               />
@@ -69,7 +69,7 @@ const Login = () => {
             <Text style={styles.text}>Forgot Password ?</Text>
           </View>
           <View style={styles.inputControl}>
-            <TouchableOpacity style={styles.Button}>
+            <TouchableOpacity activeOpacity={1} style={styles.Button} onPress={goToHome}>
               <Text style={styles.btnText}>LOGIN</Text>
             </TouchableOpacity>
           </View>
@@ -81,12 +81,12 @@ const Login = () => {
 
 export default Login;
 
-var styles = StyleSheet.create({
+export const  styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.PRIMARY,
+    backgroundColor: colors.WHITE,
   },
   main: {
     flex: 1,
@@ -97,7 +97,7 @@ var styles = StyleSheet.create({
   },
   input: {
     width: '87%',
-    color: '#fff',
+    color: colors.PRIMARY,
     height: '100%',
     paddingLeft: 9,
     fontFamily: 'Quicksand-Medium',
@@ -108,13 +108,16 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: 50,
-    backgroundColor: '#419ff1',
+    backgroundColor: colors.WHITE,
     borderRadius: 5,
     elevation: 0.7,
     color: '#fff',
     shadowOffset: {width: 10, height: 20},
     shadowColor: '#fff',
     marginTop: 5,
+    borderColor:colors.PRIMARY,
+    borderStyle:'solid',
+    borderWidth:1
   },
   emailIcon: {},
   inputControl: {
@@ -132,22 +135,25 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: 50,
-    backgroundColor: '#fff',
+    backgroundColor:colors.PRIMARY,
     borderRadius: 5,
-    elevation: 2,
-    color: '#fff',
+    elevation:2,
+    color: colors.WHITE,
     shadowOffset: {width: 10, height: 20},
+
     shadowColor: '#419ff1',
     marginTop: 3,
   },
   btnText: {
-    color: '#419ff1',
+    color:colors.WHITE,
     fontFamily: 'Quicksand-Bold',
+    fontWeight:'bold'
   },
   title: {
-    fontSize: 16,
+    fontSize: 25,
     fontFamily: 'Quicksand-Bold',
-    color: '#fff',
+    color:colors.PRIMARY,
+    fontWeight:'bold'
   },
   forgot: {
     display: 'flex',

@@ -10,7 +10,7 @@ import TableRow from '../components/TableRow';
 
 const Dashboard = () => {
     return (
-        <ScrollView style={grobalStyles.main}>
+        <ScrollView>
             <DashbaordStatistics />
             <View >
                 <Text style={{...grobalStyles.textBlack,...grobalStyles.textBold,...grobalStyles.textXl,...grobalStyles.container,marginTop:25}}>Recent  issues</Text>

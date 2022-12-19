@@ -4,7 +4,9 @@ const navigations = {
   DASHBOARD:'dashbaord',
   REPORT:'report',
   PROFILE:'profile',
-  REPORT_CASE:'reportCase'
+  REPORT_CASE:'reportCase',
+  MAIN:'main',
+  SIGNUP:'signup'
 };
 
 export default navigations;

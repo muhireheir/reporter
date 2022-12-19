@@ -1,5 +1,5 @@
 import { View, Text, Button, StyleSheet } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import navigations from '../utils/navigation';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MI from 'react-native-vector-icons/MaterialIcons'
@@ -7,11 +7,18 @@ import Reports from './Reports';
 import colors from '../utils/colors';
 import Dashboard from './Dashboard';
 import Header from '../components/Header';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 
 const Home = () => {
   const Tab = createBottomTabNavigator();
+  const navigation = useNavigation();
+  useEffect(()=>{
+      navigation.navigate(navigations.MAIN);
+  },[]);
+  
   return (
     <Tab.Navigator  screenOptions={{
       tabBarActiveTintColor: colors.PRIMARY,

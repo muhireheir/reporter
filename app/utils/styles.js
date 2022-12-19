@@ -13,8 +13,6 @@ export const grobalStyles = StyleSheet.create({
         marginTop:10,
         padding:10
     },
-    main:{
-    },
     dashboardCard:{
         flexDirection:'row',
         flexWrap:'wrap',
@@ -76,5 +74,78 @@ export const grobalStyles = StyleSheet.create({
         display:'flex',
         justifyContent:'center',
         alignItems:'center'
-    }
+    },
+    textArea:{
+        borderColor:colors.GREY,
+        borderWidth:1,
+        display:'flex',
+        justifyContent:'flex-start',
+        color:colors.BLACK,
+        borderRadius:10,
+        padding:20
+    },
+    filePicker:{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '50%',
+            height: 50,
+            borderRadius: 5,
+            elevation:0,
+            marginTop: 3,
+            borderColor:colors.PRIMARY,
+            borderWidth:0.5,
+            marginTop:10
+    },
+    button_primary:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: 50,
+        borderRadius: 5,
+        elevation:0,
+        marginTop: 3,
+        borderColor:colors.PRIMARY,
+        borderWidth:0.5,
+        marginTop:10,
+        backgroundColor:colors.PRIMARY
+},
+main:{
+    flex:1,
+    backgroundColor:colors.PRIMARY,
+},
+logoContainer:{
+    display:'flex',
+    justifyContent:'center',
+    flexDirection:'row',
+    width:"100%",
+},
+button_border_white:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: 50,
+    borderRadius: 5,
+    elevation:0,
+    marginTop: 3,
+    borderColor:colors.WHITE,
+    borderWidth:0.5,
+    marginTop:10,
+},
+button_bg_white:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: 50,
+    borderRadius: 5,
+    elevation:0,
+    marginTop: 3,
+    borderColor:colors.WHITE,
+    borderWidth:0.5,
+    marginTop:10,
+    backgroundColor:colors.WHITE
+}
   });

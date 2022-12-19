@@ -7,6 +7,10 @@ import colors from './app/utils/colors';
 import Login from './app/screens/Login';
 import Home from './app/screens/Home';
 import ReportCase from './app/screens/ReportCase';
+import Main from './app/screens/Main';
+import Signup from './app/screens/Singup';
+
+
 
 
 const App = () => {
@@ -20,7 +24,7 @@ const App = () => {
         backgroundColor={colors.PRIMARY}
       />
       <Navigator
-        initialRouteName={navigations.LOGIN}
+        initialRouteName={navigations.HOME}
         screenOptions={{
           headerShown: false,
         }
@@ -39,6 +43,8 @@ const App = () => {
           }}
           children={props => <ReportCase  {...props } stackProps={props} />}
         />
+        <Screen name={navigations.MAIN} component={Main}  />
+        <Screen name={navigations.SIGNUP} component={Signup}  />
       </Navigator>
     </NavigationContainer>
     </>
